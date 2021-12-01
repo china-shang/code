@@ -18,7 +18,7 @@ class LongestCommonPrefix14 {
 
     public static void main(String[] args) {
         String[] strs = {"asdjisdf", "asdjiej", "asd3"};
-        LongestCommonPrefix s = new LongestCommonPrefix();
+        LongestCommonPrefix14 s = new LongestCommonPrefix14();
         String res = s.longestCommonPrefix(strs);
         System.out.println(res);
     }
