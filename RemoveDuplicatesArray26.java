@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 class RemoveDuplicatesArray26 {
 
+    // 用set记录下遇到的每个字符，如果遇到重复的左移+1
     public static int remove(int[] arr){
         if(arr == null){
             return 0;

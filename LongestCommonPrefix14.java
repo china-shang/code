@@ -1,4 +1,5 @@
 class LongestCommonPrefix14 {
+    // 选取第一个对比,剩余的每个字符串都和他对比,最后比到末尾,或者遇到不同时结束
     public String longestCommonPrefix(String[] strs) {
         if(strs.length == 0){
             return "";
