@@ -18,9 +18,7 @@ class KMP {
             pi[i] = j;
         }
 
-        // for (int i = 0, j = 0; i < m; i++) {
         for(int i=0,j=0; i < m; i++){
-            // while (j > 0 && s1.charAt(i) != s2.charAt(j)) {
             while(j > 0 && s1.charAt(i) != s2.charAt(j)){
                 j = pi[j - 1];
             }
@@ -31,19 +29,6 @@ class KMP {
                 return i - n + 1;
             }
         }
-
-        // for(int i=0,j=0;i<m;i++){
-            // if(j>0 && s1.charAt(i) != s2.charAt(j)){
-                // j = pi[j-1];
-            // }
-            // if( s1.charAt(i) == s2.charAt(j)){
-                // j++;
-            // }
-            // if(n == j){
-                // return i - n + 1;
-            // }
-        // }
-
 
         return -1;
     }
