@@ -1,4 +1,5 @@
 class AddBinary67{
+    // 从右往左加，最后reverse反转,如果最后进位>0，append 1
     public static String add(String a, String b){
         StringBuilder sb = new StringBuilder();
         int l = a.length(), r=b.length();
