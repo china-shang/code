@@ -33,7 +33,7 @@ class MaxSubArraySum53 {
             return arr[left];
         }
         int mid = (right - left) / 2 + left;
-        System.out.println(String.format("%d %d %d", left, mid ,right));
+        // System.out.println(String.format("%d %d %d", left, mid ,right));
         int leftMax = maxArraySpilit(arr, left, mid);
         int rightMax = maxArraySpilit(arr, mid+1, right);
         int crossMax = maxCrossArray(arr, left, mid, right);
