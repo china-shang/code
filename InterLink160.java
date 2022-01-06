@@ -17,6 +17,18 @@ import java.util.HashSet;
      }
  }
 public class InterLink160 {
+    public static ListNode getIntersectionNode1(ListNode headA, ListNode headB) {
+        if(headA == null || headB == null){
+            return null;
+        }
+        ListNode x = headA, y = headB;
+        while(x != y){
+            x = x == null ? headB : x.next;
+            y = y == null ? headA : y.next;
+        }
+
+        return x;
+    }
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode cur = headA;
         Set<ListNode> set = new HashSet<>();
@@ -41,6 +53,9 @@ public class InterLink160 {
         ListNode n1 = new ListNode(3, new ListNode(4, same));
         ListNode n2 = new ListNode(1, new ListNode(4, same));
         System.out.println(getIntersectionNode(n1, n2));
+        System.out.println();
+        System.out.println(getIntersectionNode1(n1, n2));
+
 
     }
 }
