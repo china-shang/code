@@ -37,9 +37,7 @@ class Offer13MoveCountMid {
         }
         moved[i][j] = true;
         move(i+1, j, k);
-        move(i-1, j, k);
         move(i, j+1, k);
-        move(i, j-1, k);
     }
 
     public static void main(String[] args) {
