@@ -27,9 +27,30 @@ class TwoTreeBalance110 {
         }
         return Math.max(height(root.left), height(root.right)) + 1;
     }
+
+    public static boolean isBalanced1(TreeNode root){
+        if(root == null){
+            return true;
+        }
+        return height1(root) > 0;
+    }
+    public static int height1(TreeNode root){
+        if(root == null){
+            return 0;
+        }
+        int left = height1(root.left);
+        int right = height1(root.right);
+        if(left < 0 || right < 0 || Math.abs(left - right) > 1){
+            return -1;
+        }
+        return 1 + Math.max(left, right);
+    }
+
     public static void main(String[] args) {
         TreeNode t = new TreeNode(1, new TreeNode(2, new TreeNode(3), new TreeNode(3)), new TreeNode(4));
         System.out.println(isBalanced(t));
+        System.out.println(isBalanced1(t));
 
     }
+
 }
