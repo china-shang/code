@@ -2,6 +2,18 @@ import java.util.Arrays;
 import java.util.*;
 
 class MaxSubArraySum53 {
+    // 本来变化的值有两个,left right.有n*n的可能
+    // 固定一端right.设f(right)为已right结尾的最大值
+    // 变为了n种可能,并且f(n) = max(f(n-1) + num, num)
+    public static int maxArray1(int[] arr){
+        int pre = 0, max = arr[0];
+        for(int num: arr){
+            pre = Math.max(pre + num, num);
+            max = Math.max(pre, max);
+        }
+
+        return max;
+    }
     // 穷举法
     // 遍历所有的子数组，找到最大值
     public static int maxArray(int[] arr){
@@ -63,6 +75,7 @@ class MaxSubArraySum53 {
 
     public static void main(String[] args) {
         System.out.println(maxArray(new int[]{1,-3,2,4,3,-5,6,-3}));
+        System.out.println(maxArray1(new int[]{1,-3,2,4,3,-5,6,-3}));
         System.out.println(maxArraySpilit(new int[]{1,-3,2,4,3,-5,6,-3}));
         // 10
     }
