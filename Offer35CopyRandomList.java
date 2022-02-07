@@ -31,11 +31,10 @@ class Offer35CopyRandomList {
             return null;
         }
         Map<Node,Node> map = new HashMap<>();
-        Node t = head;
         Node newHead = new Node(head.val);
-        Node last = newHead;
         map.put(head, newHead);
-        t = t.next;
+        Node last = newHead;
+        Node t = head.next;
         while(t != null){
             last.next = new Node(t.val);
             last = last.next;
