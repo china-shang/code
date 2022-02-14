@@ -13,3 +13,10 @@ select d.name as Department, e.name as Employee, e.salary as  Salary from Employ
 on e.departmentId = t.departmentId and e.salary = t.maxSalary join Department d on e.departmentId=d.id
 # 部门最高工资 184
 
+DELETE p2 FROM Person p1, Person p2 WHERE p1.Email = p2.Email AND p2.Id > p1.Id
+# 邮件去重 delete可以join
+
+select t2.id from Weather t1, Weather t2 where date_add(t1.recordDate, interval 1 day) = t2.recordDate and t2.temperature > t1.temperature; 
+# 比昨天温度高的日子 date_add(dt, interval 1 day)
+
+
