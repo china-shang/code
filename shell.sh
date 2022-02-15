@@ -9,3 +9,6 @@ tail +10 file.txt |head -1
 #统计词频
 cat words.txt | tr -s ' ' '\n' | sort |uniq -c | sort -n -r | awk '{print $2,$1}'
 
+# 打印ip -o只打印匹配的部分，?<=匹配之后 ?=匹配之前
+ifconfig |grep -Po '(?<=inet).*(?= netmask)'
+
