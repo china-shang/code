@@ -1,4 +1,6 @@
 class UglyNum263 {
+    // 除掉所有的2 3 5
+    // 对于2,3,5中的任何一个,如果余数为0就/,最后判断是否为1
     public static boolean isUgly(int num){
         if(num <= 0){
             return false;
