@@ -2,7 +2,18 @@ import java.util.List;
 import java.util.ArrayList;
 
 class SummaryRanges228 {
-    // TODO
+    public List<String> summaryRanges2(int[] nums) {
+        List<String> res = new ArrayList<>();
+        for(int i = 0, j = 0; i < nums.length; i = j){
+                while(++j < nums.length && nums[j]==nums[j-1] + 1){}
+                if(i == j - 1){
+                    res.add(String.valueOf(nums[i]));
+                } else {
+                    res.add( nums[i] + "->" + nums[j-1]);
+                }
+            }
+        return res;
+    }
     public static List<String> summaryRanges1(int[] nums){
         if(nums == null || nums.length == 0){
             return new ArrayList<>();
